@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  width: 100%;
+  height: 100vh;
+  cursor: none;
+  background-image: url(./images/fondo-portada.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+  background-position: center center;
+  font-family: sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.container div {
+  padding: 5px;
+}
+
+.container div:last-child {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.cta {
+  position: relative;
+  display: inline-block;
+  cursor: none;
+  padding: 15px 30px;
+  border: solid 1px slategray;
+  color: white;
+  letter-spacing: 4px;
+  font-size: 24px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0, 2s;
+}
+
+.cta:hover {
+  background-color: slategray;
+  box-shadow: 0 0 10px rgb(87, 238, 213), 0 0 40px rgb(87, 238, 213),
+    0 0 80px rgb(87, 238, 213);
+  transition-delay: 1s;
+}
+
+.cta span {
+  position: absolute;
+  display: block;
+}
+
+#span1 {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgb(87, 238, 213));
+}
+
+.cta:hover #span1 {
+  left: 100%;
+  transition: 1s;
+}
+
+#span3 {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, rgb(87, 238, 213));
+}
+
+.cta:hover #span3 {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+#span2 {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, rgb(87, 238, 213));
+}
+
+.cta:hover #span2 {
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+
+#span4 {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, rgb(87, 238, 213));
+}
+
+.cta:hover #span4 {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
+}
+
+.ani-01 {
+  animation-name: ani1;
+  animation-duration: 400ms;
+  animation-iteration-count: 1;
+  animation-delay: 4s;
+  animation-fill-mode: both;
+}
+
+.ani-02 {
+  animation-name: ani2;
+  animation-duration: 1.4s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+.ani-03 {
+  animation-name: ani3;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+}
+
+.ani-04 {
+  animation-name: ani4;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-delay: 1s;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation-fill-mode: both;
+}
+
+@keyframes ani1 {
+  0% {
+    transform: rotate(-70deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes ani2 {
+  0% {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0) rotate(720deg);
+    opacity: 1;
+  }
+}
+
+@keyframes ani3 {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes ani4 {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .light {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-image: radial-gradient(
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0) 60%
+    );
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(20px);
+  }
+}
